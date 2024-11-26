@@ -16,7 +16,7 @@
   anything else just show "Enter your name". This would allow to mantain home page"/" with that text and avoid crashing because doesn't have the variables define at the beginning%>
 <%if (locals.name && locals.nameCounted) {%> 
   <h1>
-    Your name "<%= name %>" has <%= nameCounted %> characters. // here we write or copy paste the values linked to the variables in the index.js file
+    Your name "<%= name %>" has <%= nameCounted %> characters. <%# here we write or copy paste the values linked to the variables in the index.js file %>
    </h1> 
    <%} else {%>
     <h1>Enter your name ✍️</h1>
