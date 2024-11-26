@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How many characters?</title>
+</head>
+
+<body>
+  <!-- Write your code here -->
+
+  <%# locals.xxx allows you to hold the variable in EJS. Here we use it beacuse
+  if we run it like without it the home page "/" doesn't have written any data in the variable name and nameCounted. 
+  this code could be read like this: If name and nameCounted (locals.name locals nameCounted) exists then shows the following text
+  anything else just show "Enter your name". This would allow to mantain home page"/" with that text and avoid crashing because doesn't have the variables define at the beginning%>
+<%if (locals.name && locals.nameCounted) {%> 
+  <h1>
+    Your name "<%= name %>" has <%= nameCounted %> characters. // here we write or copy paste the values linked to the variables in the index.js file
+   </h1> 
+   <%} else {%>
+    <h1>Enter your name ✍️</h1>
+    <%}%>
+  <form action="/submit" method="POST">
+    <input type="text" name="fName" placeholder="First name">
+    <input type="text" name="lName" placeholder="Last name">
+    <input type="submit" value="OK">
+  </form>
+</body>
+
+</html>
